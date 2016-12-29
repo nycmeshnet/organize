@@ -1,0 +1,17 @@
+October-December 2016:
+We will finish prototyping mapping rig, using raspberry pi3, gps, and wireless cards. Make it so that data translates to heatmap hosted on NYCmesh.net. We will finish testing and gathering content for creative commons library. We will deploy network monitoring, data storage, and local content servers at each location using donated materials including contents from Wikipedia and Netflix.
+
+January -February 2017:
+We will meet with neighbors, community leaders, small-business owners and others to discuss how/when we are going to install. We will gather devices, install software, and configure for each ‘island’ of the network. This can be done in conjunction with interested community parties so that each part of the technology becomes less and less of a black box. Closing the digital divide will require much more than internet access in itself. The only way to close it is by making the technology open and accessible. We will build and develop our curriculum with the Open Technology Institute.
+
+Spring 2017:
+We will continue to meet with neighbors as above.
+We will complete site surveys, display mapping data, and publish results on our website. We will take the raspberry pi devices to the areas in question. If we do one neighborhood per weekend, this will take at most a month. I have also been in contact with friends who are taxi drivers and bicycle delivery people who can toss the device in the their bag or trunk to get a much wider map of the spectrum in NYC.  This data will be published as a map and a raw export on our website and on our repository.
+    In addition, we will coordinate with the Open Technology Institute’s Resilient Community’s program that is itself targeting under-served areas to develop a curriculum that teaches the necessary network management skills without getting bogged down in technical details and jargon. We can use the map data to show our predictive network designs, introduce new neighbors to the network, and map the installs.
+    We might do some installs here, but given the cool, wet weather of an NYC Spring, we will likely not have much suitable weather until May anyway.
+
+Summer 2017:
+    We will do the installs. With 100 installs and a 16-weeks between May and September, we would need to install about 6 nodes per week. Given that we will have configured the devices already, we would only need to plug them in, do network range tests (using the mapping rigs again), and compile the data. Since the installs will be within a few blocks, a couple volunteers can easily knock out a dozen in a day.
+
+August-September:
+    Synthesize our new map data into a city-wide spectrum map that illustrates the noise (other networks) and the coverage (our network). We can use this data to build predictive mapping tools that will take gps input, a noise figure, and the locations of existing nodes to output a map that illustrates how to get the most network out of every dollar spent for any city in the world.
