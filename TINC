@@ -1,0 +1,74 @@
+From Nitin:
+So I set my computer in Amazon cloud, that tunnels to HE IPv6 Internet
+connected to Brian's node. That is our gateway to IPv6 Internet in the
+future. Right now its only an IPv4 Tunnel, but may be we can set up an
+IPv6 Tunnel in the future, so all nodes can get out to v6 Internet
+from my server.
+
+Creating Tinc Tunnel between mesh node gateways to Brian's Tinc node
+here! Routing Mesh Node traffic between Islands to be covered later.
+
+I am detailing out the process of how we create clients here :
+
+Steps:
+a. Install TINC.
+b. Create directories and conf files
+    mkdir -p /etc/tinc/<name>
+    vi /etc/tinc/<name>/tinc.conf
+
+    add below to tinc.conf above. serverev is the East Village server
+to connect to.
+
+    Name = <name>
+    AddressFamily = ipv4
+    Device=/dev/net/tun
+    ConnectTo = serverev
+
+c. Create public/private keys for <name> , public key will be stored
+on /etc/tinc/<name>/hosts/<name>
+    tincd -n <name> -K
+
+d. Add "Subnet=192.168.112.x" to the top of the file on
+/etc/tinc/<name>/hosts/<name> , so far .1 is used for EV and .10 is
+used for IPv6 gateway. We need to keep a record of this.
+
+e. Add the following contents on two files, tinc-up and tinc-down , on
+/etc/tinc/<name> folder.
+
+tinc-up : change /bin/bash to /bin/sh if a mesh node. also change
+192.168.112.x to your IP.
+
+#!/bin/bash
+ifconfig $INTERFACE 192.168.112.x netmask 255.255.255.0
+
+tinc-down
+
+#!/bin/bash
+ifconfig $INTERFACE down
+
+f. chmod these two files.
+
+chmod 755 /etc/tinc/myvpn/tinc-*
+
+g. Now copy the /etc/tinc/<name>/hosts/<name> public key file to
+wherever we want to Peer. e.g. in this case, we copy the
+hosts/serverev file to this client and this client's hosts/<name> file
+to Brian's EV server, tinc hosts directory.
+
+h. Run Tinc  -- change to /tmp/log/tinc.log if you are on a mesh node.
+
+    tincd -n v6gw --logfile=/var/log/tinc.log
+
+
+Then you should be able to ping the tunnel from EV mesh node as below.
+
+root@Mn-EV-3rdSt-N750-3f00:/etc/tinc/serverev/hosts# ping 192.168.112.10
+PING 192.168.112.10 (192.168.112.10): 56 data bytes
+64 bytes from 192.168.112.10: seq=0 ttl=255 time=19.706 ms
+64 bytes from 192.168.112.10: seq=1 ttl=255 time=51.698 ms
+
+Tunnel IPs 10.11.12.1 and 10.11.12.2
+https://10.11.12.2
+
+ The current tunnel is between Brian’s router- 10.30.75.1  and Nitin’s http://10.63.326.1
+ 
