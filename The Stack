@@ -1,0 +1,40 @@
+| Name         | Protocol                    | Definition                                                | Our Stack                                                            |
+|--------------|-----------------------------|-----------------------------------------------------------|----------------------------------------------------------------------|
+| Application  | .js or whatever             | Runs client scripting for dynamic content                 | github.com/nycmeshnet/nycmeshnhet.github.io                          |
+| Presentation | Html, css, https            | Shows user-readable web objects (boxes, tables, sections) | Your favorite browser                                                |
+| Session      | duplex/simplex session host | manages sessions and ports                                | varies by device                                                     |
+| Transport    | TCP/UDP                     | ensures data transmission                                 | TCP/UDP                                                              |
+| Network      | DHCP, WDS, IP               | handles navigation of network                             | TINC/openvpn/WDS/802.11s                                             |
+| Data Link    | MAC, LLC, ethernet          | what happens on the ends of the ethernet cable            | QAM (for backhaul), bmx6 (local traffic), wifi (spectrum allocation) |
+| Physical     | Wi-fi, bluetooth, LORAWAN   | Vibrating electroncs                                      | 5GHz backhaul, 2.4 Ghz local                                         |
+
+
+Hardware
+Stable/Legacy:
+More info at nycmesh.net/download
+
+In testing:
+Add github.com/nycmeshnet/nycmeshfeed to your build for these devices. Binaries on the way. Email firmware@nycmesh.net to get involved.
+Dual-band
+TP-Link are locked until probably 2017
+ZBT-APE522ii see M2M below
+2.4 indoor
+TP-Link discontinued our 842ND, the 841 has poor OpenWrt support and very little memory
+GL-AR150 -- Charlie is testing for indoor replacement/low power option. Possibly usable with 5Ghz usb wifi dongle in addition to on-board 2.4. 
+In alpha testing Need to add TINC
+GL-300M -- Same as above, but being tested by @rgreen
+Directional 802.11ac
+This would be great for connecting to kiosks. NSM5 gets 60Mb, could probably double that with 802.11ac
+P2P
+Testing AF 2.4, Donated 24Ghz, Ligo. Cruzio and Google use Siklo.
+P2M
+Testing Prism to NanoBeamAC  getting around 80Mb over 2 km
+LigoWave dlb 5-90
+M2M
+ZBT-APE522ii  Is it possible to buy less than 100? Hard to believe it is dual and ac.
+They said they ship us 2 for $45 a piece--for testing. $37 at 100. 
+http://zbtlink.com/products/ap/ZBT-APE522II.html
+No FCC compliance yet, but legal for HAMs to operate.
+
+
+
