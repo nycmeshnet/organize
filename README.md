@@ -1,5 +1,5 @@
 #Welcome to the Organize repository. Below is our:
-##Organizational documentation
+##Technical Documentation
 ####Hardware 
 ####Software
 ####Learn Mesh
